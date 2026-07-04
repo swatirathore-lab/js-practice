@@ -1,0 +1,20 @@
+/* activity */
+/* ye add karo margin: 0 auto — block elements ko horizontally center karta hai! 😊*/
+/* body {
+    text-align:center;
+}
+
+
+div{
+    height:100px;
+    width:500px;
+    border:1px solid black;
+    margin: 0 auto;  
+} */
+/*event listner for elements*/
+.box {
+    height:100px;
+    width:100px;
+    background-color: pink;
+    border: 1px solid black;
+}
