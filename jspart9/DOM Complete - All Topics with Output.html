@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t5 -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<title>DOM Complete - All Topics with Output</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    max-width: 700px;
+    margin: 40px auto;
+    padding: 0 20px;
+    line-height: 1.6;
+    color: #222;
+  }
+  .example {
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 28px;
+    background: #fafafa;
+  }
+  .topic-tag {
+    display: inline-block;
+    background: #333;
+    color: white;
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    letter-spacing: 0.3px;
+  }
+  .example h3 { margin: 0 0 10px; font-size: 17px; }
+  pre {
+    background: #1e1e1e;
+    color: #d4d4d4;
+    padding: 12px 14px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 13px;
+  }
+  .output-label { font-size: 13px; color: #666; margin: 14px 0 6px; font-weight: bold; }
+  .output-box { border: 1px dashed #aaa; border-radius: 8px; padding: 14px; background: white; }
+  .red { color: red; margin:0; }
+  .blue { color: blue; margin:0; }
+  .box { border: 1px solid black; background-color: pink; padding: 10px; border-radius: 4px; }
+  .console-box {
+    background: #1e1e1e; color: #9fe1cb; font-family: monospace;
+    font-size: 13px; padding: 12px 14px; border-radius: 6px;
+  }
+  .console-red { color: #f09595; }
+  h1 { font-size: 22px; }
+  .toc { background: #f0f0f0; padding: 14px 18px; border-radius: 8px; margin-bottom: 30px; }
+  .toc a { display: block; font-size: 14px; color: #333; text-decoration: none; margin: 4px 0; }
+  .toc a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+
+<h1>DOM Manipulation — All Topics: Code + Output</h1>
+<p>Har section ke top pe TOPIC TAG hai — wahi naam <code>DOM_Manipulation_Notes.md</code> ke headings se match karta hai.</p>
+
+<div class="toc">
+  <strong>Quick Jump (topics in order):</strong>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t1">1. Introduction / What is DOM</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t2">2. Selecting Element by ID</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t3">3. Selecting Elements by Class Name</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t4">4. Selecting Elements by Tag Name</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t5">5. Query Selectors</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t6">6. Setting Content in Objects</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t7">7. Manipulating Attributes</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t8">8. Manipulating Style (with style attribute)</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t9">9. classList Property</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t10">10. Navigation on Page</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t11">11. Adding Elements on Page</a>
+  <a href="file:///C:/Users/swati/Downloads/DOM_All_Topics_Output.html#t12">12. Removing Elements from Page</a>
+</div>
+
+<div class="example" id="t1">
+  <span class="topic-tag">TOPIC: Introduction / What is DOM?</span>
+  <h3>The DOM tree</h3>
+  <pre>console.log(document);
+// document is the root - entry point to the whole page structure</pre>
+  <div class="output-label">OUTPUT (console shows the whole HTML structure as an object):</div>
+  <div class="console-box">
+    #document<br>
+    &nbsp;&nbsp;html<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;head<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;body<br>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;h1, div, script...
+  </div>
+</div>
+
+<div class="example" id="t2">
+  <span class="topic-tag">TOPIC: Selecting Element by ID</span>
+  <h3>getElementById</h3>
+  <pre>let img = document.getElementById("mainImg");
+console.log(img);</pre>
+  <div class="output-label">OUTPUT (console):</div>
+  <div class="console-box">
+    &lt;img src="assets/spiderman_img.png" id="mainImg"&gt;
+  </div>
+  <p style="font-size:13px; color:#555; margin-top:10px;">Returns exactly ONE element (assuming only one element has that ID on the page).</p>
+</div>
+
+<div class="example" id="t3">
+  <span class="topic-tag">TOPIC: Selecting Elements by Class Name</span>
+  <h3>getElementsByClassName loop</h3>
+  <pre>let smallImages = document.getElementsByClassName("oldImg");
+for (let i = 0; i &lt; smallImages.length; i++) {
+    smallImages[i].src = "assets/spiderman_img.png";
+    console.log(`value of image no. ${i} is changed`);
+}</pre>
+  <div class="output-label">OUTPUT (browser console):</div>
+  <div class="console-box">
+    value of image no. 0 is changed<br>
+    value of image no. 1 is changed<br>
+    value of image no. 2 is changed
+  </div>
+</div>
+
+<div class="example" id="t4">
+  <span class="topic-tag">TOPIC: Selecting Elements by Tag Name</span>
+  <h3>getElementsByTagName</h3>
+  <pre>let allLinks = document.getElementsByTagName("a");
+console.log(allLinks.length);</pre>
+  <div class="output-label">OUTPUT (console):</div>
+  <div class="console-box">5 &nbsp;(if there are 5 &lt;a&gt; tags total on the page)</div>
+</div>
+
+<div class="example" id="t5">
+  <span class="topic-tag">TOPIC: Query Selectors</span>
+  <h3>querySelector("hi") vs querySelector("h1")</h3>
+  <pre>console.dir(document.querySelector("hi"));  // typo - looks for &lt;hi&gt; tag
+console.dir(document.querySelector("h1"));  // correct - looks for &lt;h1&gt; tag</pre>
+  <div class="output-label">OUTPUT (browser console):</div>
+  <div class="console-box">
+    <span class="console-red">querySelector("hi") → null</span><br>
+    querySelector("h1") → &lt;h1&gt;Spider Man&lt;/h1&gt;
+  </div>
+</div>
+
+<div class="example" id="t6">
+  <span class="topic-tag">TOPIC: Setting Content in Objects</span>
+  <h3>innerText vs innerHTML</h3>
+  <pre>let heading = document.querySelector("h1");
+heading.innerText = "New Title";        // plain text only
+heading.innerHTML = "&lt;b&gt;New Title&lt;/b&gt;";  // parses the &lt;b&gt; tag too</pre>
+  <div class="output-label">OUTPUT:</div>
+  <div class="output-box">
+    innerText result: <span>New Title</span><br>
+    innerHTML result: <b>New Title</b> (this one is bold, because the tag got parsed)
+  </div>
+</div>
+
+<div class="example" id="t7">
+  <span class="topic-tag">TOPIC: Manipulating Attributes</span>
+  <h3>setAttribute / getAttribute</h3>
+  <pre>let img = document.querySelector("#mainImg");
+img.setAttribute("src", "newImage.png");
+console.log(img.getAttribute("src"));</pre>
+  <div class="output-label">OUTPUT (console):</div>
+  <div class="console-box">newImage.png</div>
+  <p style="font-size:13px; color:#555; margin-top:10px;">Image on page also visually updates to the new file.</p>
+</div>
+
+<div class="example" id="t8">
+  <span class="topic-tag">TOPIC: Manipulating Style (with style attribute)</span>
+  <h3>links[i].style.color = "green"</h3>
+  <pre>let links = document.querySelectorAll(".box a");
+for (let i = 0; i &lt; links.length; i++) {
+    links[i].style.color = "green";
+}</pre>
+  <div class="output-label">OUTPUT (links turn green):</div>
+  <div class="output-box">
+    <a style="color:green; margin-right:14px;">Publisher</a>
+    <a style="color:green; margin-right:14px;">Stan Lee</a>
+    <a style="color:green;">Steve Ditko</a>
+  </div>
+</div>
+
+<div class="example" id="t9">
+  <span class="topic-tag">TOPIC: classList Property</span>
+  <h3>classList.add("red") / classList.add("blue") / classList.add("box")</h3>
+  <pre>para1.classList.add("red");
+H3.classList.add("blue");
+div.classList.add("box");</pre>
+  <div class="output-label">OUTPUT:</div>
+  <div class="output-box">
+    <p class="red" style="margin-bottom:10px;">Hey I'm red</p>
+    <h3 class="blue" style="margin-bottom:10px;">Hey I'm blue H3</h3>
+    <div class="box">Box with border + pink background</div>
+  </div>
+</div>
+
+<div class="example" id="t10">
+  <span class="topic-tag">TOPIC: Navigation on Page</span>
+  <h3>parentElement / children / nextElementSibling</h3>
+  <pre>let box = document.querySelector(".box");
+console.log(box.parentElement);       // body
+console.log(box.children);            // [h4, ul] inside box
+console.log(box.nextElementSibling);  // whatever comes right after .box</pre>
+  <div class="output-label">OUTPUT (console):</div>
+  <div class="console-box">
+    parentElement → &lt;body&gt;...&lt;/body&gt;<br>
+    children → HTMLCollection(2) [h4, ul]<br>
+    nextElementSibling → &lt;h2&gt;Creation &amp; Development&lt;/h2&gt;
+  </div>
+</div>
+
+<div class="example" id="t11">
+  <span class="topic-tag">TOPIC: Adding Elements on Page (Practice Qs a, b, c)</span>
+  <h3>Practice Q (a) — Red paragraph</h3>
+  <pre>let para1 = document.createElement("p");
+para1.innerText = "Hey I'm red";
+document.querySelector("body").append(para1);
+para1.classList.add("red");</pre>
+  <div class="output-label">OUTPUT:</div>
+  <div class="output-box"><p class="red">Hey I'm red</p></div>
+
+  <h3 style="margin-top:20px;">Practice Q (b) — Blue H3</h3>
+  <pre>let H3 = document.createElement("h3");
+H3.innerText = "Hey I'm blue H3";
+document.querySelector("body").append(H3);
+H3.classList.add("blue");</pre>
+  <div class="output-label">OUTPUT:</div>
+  <div class="output-box"><h3 class="blue">Hey I'm blue H3</h3></div>
+
+  <h3 style="margin-top:20px;">Practice Q (c) — Nested div (h1 + p inside)</h3>
+  <pre>let div = document.createElement("div");
+let h1 = document.createElement("h1");
+let para2 = document.createElement("p");
+h1.innerText = "I'm in a div";
+para2.innerText = "ME TOO!";
+div.append(h1);
+div.append(para2);
+div.classList.add("box");
+document.querySelector("body").append(div);</pre>
+  <div class="output-label">OUTPUT:</div>
+  <div class="output-box">
+    <div class="box">
+      <h1 style="margin:0 0 6px; font-size:20px;">I'm in a div</h1>
+      <p style="margin:0;">ME TOO!</p>
+    </div>
+  </div>
+</div>
+
+<div class="example" id="t12">
+  <span class="topic-tag">TOPIC: Removing Elements from Page</span>
+  <h3>element.remove()</h3>
+  <pre>let para1 = document.querySelector(".red");
+para1.remove();  // removes it completely from the page</pre>
+  <div class="output-label">OUTPUT (before → after):</div>
+  <div class="output-box">
+    Before: <p class="red" style="display:inline; margin:0;">Hey I'm red</p><br>
+    After: <em style="color:#888;">(element is gone, nothing renders here anymore)</em>
+  </div>
+</div>
+
+
+
+</body></html>
