@@ -1,32 +1,40 @@
 body {
-    text-align:center;
+    text-align: center;
 }
-.btn{
-    height:200px;
-    width:200px;
-    border-radius:20%;
-    border:10px solid black;
+
+.btn {
+    height: 200px;
+    width: 200px;
+    border-radius: 20%;
+    border: 10px solid black;
     margin: 2.5em;
 }
-.btn-container{
-    display:flex;
-    justify-content:center;
+
+.btn-container {
+    display: flex;
+    justify-content: center;
 }
-.yellow{
-    background-color:yellow;
+
+.yellow {
+    background-color: yellow;
 }
-.red{
-    background-color:red;
+
+.red {
+    background-color: red;
 }
-.purple{
-    background-color:purple;
+
+.purple {
+    background-color: purple;
 }
-.green{
-    background-color:green;
+
+.green {
+    background-color: green;
 }
-.flash{
-    background-color:white;
+
+.gameflash {
+    background-color: white;
 }
-.userflash{
-    background-color:green;
+
+.userflash {
+    background-color: green;
 }
